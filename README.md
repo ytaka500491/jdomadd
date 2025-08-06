@@ -13,6 +13,8 @@ Perfect for building family-friendly UIs and educational projects.
 - Reusable card layout, clipboard support, responsive styles
 - Ideal for educational interfaces or playful UI for younger users!
 
+Demo page here
+[Here](https://ytaka500491.github.io/jdomadd/pages/demopage.html)
 ---
 
 📦 Basic Usage
