@@ -17,7 +17,8 @@ Perfect for building family-friendly UIs and educational projects.
 
 📦 Basic Usage
 
-`JavaScript
+JavaScript
+`
 jdomAdd("button", {
   text: "reservation",
   style: { backgroundColor: "#ff66aa" },
