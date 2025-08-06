@@ -71,7 +71,7 @@ function jdomAdd(name, {
     el.classList.add("cardify");
     el.innerHTML = `
       <img src="${cardify.img || ''}" alt="${cardify.title || ''}" />
-<h3>${cardify.title || 'タイトルなし'}</h3>
+<h3>${cardify.title || 'No title'}</h3>
 <p>${cardify.text || ''}</p>
 `;
   }
@@ -106,4 +106,5 @@ function jdomAdd(name, {
   }
 
   return el;
+
 }
