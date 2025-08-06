@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>jdomadd.js デモページ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: sans-serif; padding: 2em; background: #f9f9f9; }
+    h1 { color: #333; }
+    .card { margin: 1em 0; padding: 1em; background: #fff; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    button { padding: 0.5em 1em; background: #ff66aa; color: white; border: none; border-radius: 4px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>🍓 jdomadd.js デモページ</h1>
+  <p>このページでは、<strong>jdomadd.js</strong> を使ってDOM要素を生成する様子を体験できます。</p>
+
+  <div id="demo-area"></div>
+
+  <script src="../jdomadd.js"></script>
+  <script>
+    jdomAdd("button", {
+      text: "クリックして話す",
+      speakText: "こんにちは！これは jdomadd.js のデモです。",
+      style: { marginBottom: "1em" },
+      events: {
+        click: () => alert("ボタンがクリックされました！")
+      },
+      parent: "demo-area"
+    });
+
+    jdomAdd("div", {
+      cardify: true,
+      text: "これはカードレイアウトのデモです。",
+      style: { backgroundColor: "#eef" },
+      parent: "demo-area"
+    });
+  </script>
+</body>
+</html>
