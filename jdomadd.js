@@ -78,7 +78,6 @@ function jdomAdd(name, {
     <p>${cardify.text || ''}</p>
   `;
   }
-
   if (shadowDom) {
     const shadow = el.attachShadow({ mode: "open" });
     shadow.innerHTML = typeof shadowDom === "string"
@@ -111,4 +110,5 @@ function jdomAdd(name, {
   return el;
 
 }
+
 
