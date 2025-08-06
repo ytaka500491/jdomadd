@@ -67,13 +67,16 @@ function jdomAdd(name, {
     el.appendChild(img);
   }
 
-  if (cardify) {
-    el.classList.add("cardify");
-    el.innerHTML = `
-      <img src="${cardify.img || ''}" alt="${cardify.title || ''}" />
-<h3>${cardify.title || 'No title'}</h3>
-<p>${cardify.text || ''}</p>
-`;
+  if (cardify && typeof cardify === "object") {
+  el.classList.add("cardify");
+  el.style.width = cardify.width || "auto";
+  el.style.height = cardify.height || "auto";
+
+  el.innerHTML = `
+    <img src="${cardify.img || ''}" alt="${cardify.title || ''}" style="width: 100%; height: auto;" />
+    <h3>${cardify.title || ''}</h3>
+    <p>${cardify.text || ''}</p>
+  `;
   }
 
   if (shadowDom) {
@@ -108,3 +111,4 @@ function jdomAdd(name, {
   return el;
 
 }
+
