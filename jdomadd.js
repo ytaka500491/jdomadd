@@ -94,15 +94,14 @@ function jdomAdd(name, {
   }
 
   const appendToParent = () => {
-    const target = typeof parent === 'string' ? document.getElementById(parent) : parent;
+    const target = typeof parent === 'string' ? document.querySelector(parent) : parent;
     if (target) {
       if (prepend) target.prepend(el);
       else target.appendChild(el);
     }
-  };
-
-  if (delayAppend) {
-    setTimeout(appendToParent, delayAppend);
+  }
+    if (delayAppend) {
+  setTimeout(() => appendToParent(parent, el, prepend), delayAppend)
   } else {
     appendToParent();
   }
@@ -110,5 +109,6 @@ function jdomAdd(name, {
   return el;
 
 }
+
 
 
