@@ -19,7 +19,7 @@
 
   <div id="demo-area"></div>
 
-  <script src="../jdomadd.js"></script>
+  <script src="jdomadd/jdomadd.js"></script>
   <script>
     jdomAdd("button", {
       text: "Click to talk",
@@ -28,12 +28,12 @@
       events: {
         click: () => alert("Button clicked")
       },
-      parent: "demo-area"
+      parent: "#demo-area"
     });
 
     jdomAdd("div", {
   cardify: {
-    img: "../assets/material.jpeg",
+    img: "jdomadd/assets/material.jpeg",
     title: "Card Demo",
     text: "This is a card layout demo.",
     width: "200px",
