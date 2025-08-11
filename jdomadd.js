@@ -1,12 +1,16 @@
-function jdomAdd(name, {
+window.jdomAdd = (name, {
   text, html, style, props, attr, data, events, parent,
   children, hover, tooltip, speakText, animate, visibleIf,
   classList, delayAppend, clickNavigate, prepend, shadowDom,
   tabIndex, aria, themeSwitch, keyBind, clipboard, focusOnLoad,
   group, dragEnable, responsive, loadImage, cardify
-} = {}) {
+} = {}) => {
+if (!name) {
+  console.warn("jdomAdd: Element name is required.");
+  return null;
+}
 
-  const el = document.createElement(name);
+   const el = document.createElement(name);
 
   if (text) el.textContent = text;
   if (html) el.innerHTML = html;
@@ -28,12 +32,12 @@ function jdomAdd(name, {
     el.title = tooltip;
   }
 
-  if (speakText) {
-    el.addEventListener("click", () => {
-      const uttr = new SpeechSynthesisUtterance(speakText);
-      speechSynthesis.speak(uttr);
-    });
-  }
+  if (speakText && 'speechSynthesis' in window) {
+  el.addEventListener("click", () => {
+    const uttr = new SpeechSynthesisUtterance(speakText);
+    speechSynthesis.speak(uttr);
+  });
+} else console.info("jdomAdd: Function SpeechSynthesisUtterance is not available on your browser.");
 
   if (animate) {
     el.style.transition = animate.transition || "all 0.3s ease";
@@ -93,20 +97,26 @@ function jdomAdd(name, {
 });
   }
 
-  const appendToParent = () => {
-    const target = typeof parent === 'string' ? document.querySelector(parent) : parent;
-    if (target) {
-      if (prepend) target.prepend(el);
-      else target.appendChild(el);
-    }
-  }
-    if (delayAppend) {
-  setTimeout(() => appendToParent(parent, el, prepend), delayAppend)
-  } else {
-    appendToParent();
+ const appendToParent = () => {
+  if (!parent) {
+    console.warn("jdomAdd: No parent specified. Element will not be appended.");
+    return;
   }
 
-  return el;
+  const target = typeof parent === 'string' ? document.querySelector(parent) : parent;
+
+  if (!target) {
+    console.warn(`jdomAdd: Parent element not found: ${parent}`);
+    return;
+  }
+
+  try {
+    prepend ? target.prepend(el) : target.appendChild(el);
+  } catch (e) {
+    console.error("jdomAdd: Failed to append element:", e);
+  }
+};
+    
 
 }
 
