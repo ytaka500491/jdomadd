@@ -1,0 +1,44 @@
+{
+  "name": "jdomadd",
+  "version": "1.0.3",
+  "description": "Lightweight DOM utility for creating gentle, accessible UI components for families and children.",
+  "main": "jdomadd.js",
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ytaka500491/jdomadd.git"
+  },
+  "keywords": [
+    "dom",
+    "create",
+    "ui",
+    "component",
+    "kids",
+    "family",
+    "accessible",
+    "speech",
+    "tooltip",
+    "responsive",
+    "card",
+    "shadow-dom",
+    "animation",
+    "voice",
+    "gentle",
+    "safe",
+    "friendly-ui",
+    "yuto-dom",
+    "jdomadd"
+  ],
+  "author": "Yuuto",
+  "license": "MIT",
+  "homepage": "https://github.com/ytaka500491/jdomadd#readme",
+  "bugs": {
+    "url": "https://github.com/ytaka500491/jdomadd/issues"
+  },
+  "files": [
+    "jdomadd.js",
+    "README.md"
+  ]
+}
