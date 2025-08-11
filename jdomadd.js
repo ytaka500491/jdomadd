@@ -53,7 +53,17 @@ if (!name) {
   if (visibleIf !== undefined) el.style.display = visibleIf ? "" : "none";
   if (clickNavigate) el.onclick = () => location.href = clickNavigate;
 
-  if (clipboard) el.addEventListener("click", () => navigator.clipboard.writeText(clipboard));
+  if (clipboard) {
+  el.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(clipboard);
+      console.log("jdomAdd: Text copied to clipboard.");
+    } catch (err) {
+      console.warn("jdomAdd: Failed to copy text to clipboard.", err);
+      alert("Sorry, clipboard copy failed.");
+    }
+  });
+}
   if (focusOnLoad) window.addEventListener("load", () => el.focus());
   if (keyBind) document.addEventListener("keydown", e => { if (e.key === keyBind) el.click(); });
   if (group) el.setAttribute("data-group", group);
@@ -66,10 +76,15 @@ if (!name) {
   }
 
   if (loadImage) {
-    const img = new Image();
-    img.src = loadImage;
-    el.appendChild(img);
+  const img = new Image();
+  img.src = typeof loadImage === "string" ? loadImage : loadImage.src;
+  if (typeof loadImage === "object") {
+    if (loadImage.width) img.width = loadImage.width;
+    if (loadImage.height) img.height = loadImage.height;
+    if (loadImage.alt) img.alt = loadImage.alt;
   }
+  el.appendChild(img);
+}
 
   if (cardify && typeof cardify === "object") {
   el.classList.add("cardify");
