@@ -132,7 +132,13 @@ if (!name) {
   }
 };
     
+if (delayAppend) {
+  setTimeout(() => appendToParent(), delayAppend);
+} else {
+  appendToParent();
+}
 
+return el;
 }
 
 
