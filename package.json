@@ -1,0 +1,41 @@
+{
+  "name": "jdomadd",
+  "version": "1.0.0",
+  "description": "A library that allows you to easily add elements to the DOM.",
+  "keywords": [
+    "dom",
+    "create",
+    "ui",
+    "component",
+    "accessible",
+    "speech",
+    "tooltip",
+    "responsive",
+    "card",
+    "shadow-dom",
+    "animation",
+    "voice",
+    "gentle",
+    "ytaka500491-dom",
+    "jdomadd"
+  ],
+  "homepage": "https://github.com/ytaka500491/jdomadd#readme",
+  "bugs": {
+    "url": "https://github.com/ytaka500491/jdomadd/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ytaka500491/jdomadd.git"
+  },
+  "license": "MIT",
+  "author": "Yuuto",
+  "type": "commonjs",
+  "main": "jdomadd.js",
+  "files": [
+    "jdomadd.js",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0"
+  }
+}
