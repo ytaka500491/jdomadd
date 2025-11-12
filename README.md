@@ -3,6 +3,13 @@ A flexible utility for creating enhanced DOM elements
 
 jdomAdd() is a versatile JavaScript function that enables the creation of HTML elements using up to 30 configuration keys. It supports styling, attributes, event handling, speech synthesis, animations, card layouts, Shadow DOM integration, and accessibility features.
 
+Install
+
+ npm
+bash`
+  npm install jdomadd
+`
+
 ---
 
 Features
