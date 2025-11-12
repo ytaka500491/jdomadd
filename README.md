@@ -6,7 +6,8 @@ jdomAdd() is a versatile JavaScript function that enables the creation of HTML e
 Install
 
  npm
-bash`
+ 
+ bash`
   npm install jdomadd
 `
 
